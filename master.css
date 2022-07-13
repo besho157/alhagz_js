@@ -1,0 +1,55 @@
+.header {
+    position: fixed;
+    width: 100%;
+    justify-content: space-between;
+    height: 80px;
+    left: 0px;
+    top: 0px;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 13px 2px rgba(0, 0, 0, 0.25);
+}
+.logo {
+    display: flex;
+    margin: 0px 70px 11.35px 75px;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.search {
+    width: 570px;
+    border: none;
+    height: 36px;
+    text-align: end;
+    font-size: 15px;
+    background: rgba(218, 160, 4, 0.15);
+    border-radius: 5px 0px 0px 5px;
+}
+
+.icon-search {
+    display: contents;
+}
+
+.icon {
+    position: absolute;
+    padding: 9px 8px 8px 16px;
+    background: #FFBB00;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.text {
+    width: 104px;
+    height: 19px;
+    margin: auto;
+    text-decoration: none;
+    line-height: 37px;
+    color: #FFFFFF;
+}
+
+.button {
+    width: 132px;
+    height: 35px;
+    background: #DAA004;
+    text-align: center;
+    border-radius: 5px;
+}
