@@ -1,29 +1,37 @@
-var elements = document.getElementsByClassName("onecard");
-for (var i = 0; i < elements.length; i++) {
-  elements[i].onclick = function () {
-    var el = elements[0];
-    while (el) {
-      if (el.tagName === "DIV") {
-        el.classList.remove("active");
-      }
-      el = el.nextSibling;
-    }
+// const onecard = document.getElementsByClassName("onecard")[0];
+// onecard.onclick = function () {
+//   onecard.classList.add("active");
+//   const nextSibling = onecard.nextElementSibling;
+//   nextSibling.classList.remove("active");
+// };
 
-    this.classList.add("active");
-  };
+const cards = document.getElementById("cards");
+const divs = cards.getElementsByTagName("div");
+
+function orderAndShapeCards(activeCardIndex) {
+
+  [...divs].forEach((div, index) => {
+
+    div.classList = "";
+    
+    let leftElementIndex = (activeCardIndex + 3) % 4;
+    let rightElementIndex = (activeCardIndex + 1) % 4;
+    let smallElementIndex = (activeCardIndex + 2) % 4;
+
+    if (index === activeCardIndex) {
+      div.classList.add("active-card");
+    }
+    if (index === leftElementIndex) {
+      div.classList.add("mid-left");
+    }
+    if (index === rightElementIndex) {
+      div.classList.add("mid-right");
+    }
+    if (index === smallElementIndex) {
+      div.classList.add("small");
+    }
+  });
+
 }
 
-var elements = document.getElementsByClassName("threecard");
-for (var i = 0; i < elements.length; i++) {
-  elements[i].onclick = function () {
-    var el = elements[0];
-    while (el) {
-      if (el.tagName === "DIV") {
-        el.classList.remove("active");
-      }
-      el = el.nextSibling;
-    }
-
-    this.classList.add("active");
-  };
-}
+orderAndShapeCards(1)
