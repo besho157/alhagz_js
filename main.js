@@ -1,25 +1,18 @@
-// const onecard = document.getElementsByClassName("onecard")[0];
-// onecard.onclick = function () {
-//   onecard.classList.add("active");
-//   const nextSibling = onecard.nextElementSibling;
-//   nextSibling.classList.remove("active");
-// };
-
 const cards = document.getElementById("cards");
-const divs = cards.getElementsByTagName("div");
-
+const divs = cards.getElementsByTagName(`div`);
+const cardWidth = 0;
 function orderAndShapeCards(activeCardIndex) {
-
   [...divs].forEach((div, index) => {
-
     div.classList = "";
-    
+    div.style.left = "";
+
     let leftElementIndex = (activeCardIndex + 3) % 4;
     let rightElementIndex = (activeCardIndex + 1) % 4;
     let smallElementIndex = (activeCardIndex + 2) % 4;
 
     if (index === activeCardIndex) {
       div.classList.add("active-card");
+      div.style.marginLeft = "";
     }
     if (index === leftElementIndex) {
       div.classList.add("mid-left");
@@ -31,11 +24,18 @@ function orderAndShapeCards(activeCardIndex) {
       div.classList.add("small");
     }
   });
-
 }
 
-<<<<<<< HEAD
+orderAndShapeCards(1);
 
-=======
-orderAndShapeCards(1)
->>>>>>> dd653fb9bbc3b88dcd83ce860054eac97114586b
+let all_star = document.querySelectorAll(`span`);
+
+all_star.forEach((star , index) => {
+  star.addEventListener(`click`,() =>{
+    all_star.forEach((newstar ,newindex) => {
+      if (newindex <= index ) {
+        newstar.classList.add(`active`)
+      }
+    });
+  })
+});
